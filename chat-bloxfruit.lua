@@ -1,4 +1,3 @@
-
 wait(30)
 while wait(2) do
     
