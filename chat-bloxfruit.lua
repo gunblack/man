@@ -128372,14 +128372,14 @@ while wait(1) do
     
     
     
-    waktu = math.random(1400,7400)
+    waktu = math.random(1,1)
     print(waktu)
     wait(waktu)
     
     chatnow = dogs[math.random(1, #dogs)]
     chatMessage(chatnow)
     
-    waktu2 = math.random(220, 520)
+    waktu2 = math.random(1, 1)
     wait(waktu2)
     
     randomize1 = math.random(1, 2)
@@ -128388,7 +128388,7 @@ while wait(1) do
         chatnow = dogs[math.random(1, #dogs)]
         chatMessage(chatnow)
     
-        waktu2 = math.random(120, 420)
+        waktu2 = math.random(1, 1)
         wait(waktu2)
     
         randomize1 = math.random(1, 2)
@@ -128396,7 +128396,7 @@ while wait(1) do
             chatnow = dogs[math.random(1, #dogs)]
             chatMessage(chatnow)
     
-            waktu2 = math.random(120, 420)
+            waktu2 = math.random(1, 1)
             wait(waktu2)
     
         end
