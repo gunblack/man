@@ -1,0 +1,1522 @@
+---750 ReviveToken, 1200 DeathToken----
+local DeathPointTarget = 1200
+
+---Seasonal---
+local AttackOrder1 = {"Heart", "Swan"} 
+local random1 = AttackOrder1[math.random(1,#AttackOrder1)]
+local AttackOrder2 = {"Heartsnake", "Rosevine"} 
+local random2 = AttackOrder2[math.random(1,#AttackOrder2)]
+
+local placeId = game.PlaceId
+if placeId == 5233782396 then
+
+function MakanMinum()
+    local Hungerbar = game:GetService("Players").LocalPlayer.PlayerGui.HUDGui.BottomFrame.Other.Hunger.HoverLabel.Text
+         Hungerbar1 = string.match(Hungerbar, "%d+")
+             Hungerbar2 = tonumber(Hungerbar1)
+                 Thirstbar = game:GetService("Players").LocalPlayer.PlayerGui.HUDGui.BottomFrame.Other.Thirst.HoverLabel.Text
+                     Thirstbar1 = string.match(Thirstbar, "%d+")
+                         Thirstbar2 = tonumber(Thirstbar1)
+ if Thirstbar2 < 90 or Hungerbar2 < 90 then
+
+        if Thirstbar2 > Hungerbar2 or Thirstbar2 == Hungerbar2 then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -1538, 398, -1172, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+            wait(0.5)
+            keypress(0x45)
+            keyrelease(0x45)
+            wait(0.5)
+        end
+        if Thirstbar2 < Hungerbar2 then      
+        local args = {[1] = workspace:WaitForChild("Interactions"):WaitForChild("Lakes"):WaitForChild("Lake")}
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DrinkRemote"):FireServer(unpack(args))
+        wait(0.5)
+        local args = {[1] = workspace:WaitForChild("Interactions"):WaitForChild("Lakes"):WaitForChild("Lake")}
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DrinkRemote"):FireServer(unpack(args))
+        wait(0.5)
+        local args = {[1] = workspace:WaitForChild("Interactions"):WaitForChild("Lakes"):WaitForChild("Lake")}
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DrinkRemote"):FireServer(unpack(args))
+        end
+    else  
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -1561, 398, -1211, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+        wait(0.5)  
+        local args = {[1] = "TailDrop"} 
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ActivateAbility"):FireServer(unpack(args)) 
+        wait(0.5)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -1561, 398, -1211, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+ end
+
+end
+
+function Pergi()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -1561, 398, -1211, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+    wait(1)
+    local args = {[1] = "TailDrop"} 
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ActivateAbility"):FireServer(unpack(args)) 
+    wait(2)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -1286, 303, -350, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+    wait(6)  
+end
+
+function Hitself()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -1561, 398, -1211, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+    wait(0.5)
+    TresholdMe = tonumber(workspace.Characters[game.Players.LocalPlayer.Name].Data:GetAttribute("d"))
+   for _,Child10 in workspace.Characters:GetChildren() do
+        wait()
+         EnemiesHP = tonumber(Child10.Data:GetAttribute("h"))
+        if TresholdMe*10 < EnemiesHP then 
+        EnemiesName = Child10.Name
+                jarak = tonumber((workspace.Characters[game.Players.LocalPlayer.Name].Data:GetAttribute("P") - workspace.Characters[EnemiesName].Data:GetAttribute("P")).Magnitude)
+                if EnemiesName ~= game.Players.LocalPlayer.Name and jarak < 20 then
+                    Musuh = EnemiesName
+                    return
+                end       
+        end
+   end
+end
+
+
+function NeedWait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -1286, 303, -350, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+    wait(1)
+
+end
+
+function Sniff()
+    wait(1)
+    local args = {[1] = 1}
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SetMissionRemote"):FireServer(unpack(args))  
+end
+
+function Mud()
+    keypress(0x45)
+    wait(0.5)
+    keyrelease(0x45)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -1591, 397, -1262, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+    wait(1)
+    keypress(0x45)
+    wait(0.5)
+    keyrelease(0x45)
+    local args = {[1] = 1}
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SetMissionRemote"):FireServer(unpack(args))
+end
+
+function RegionNow()
+    if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions.Mesa.Value > 0  then
+        if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions.Desert.Value > 0  then
+            if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions.Mountains.Value > 0  then
+                if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions["Central Rockfaces"].Value > 0  then
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions.Tundra.Value > 0  then
+                        if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions.Jungle.Value > 0  then
+                        else
+                            Region = "Jungle"
+                        end
+                    else
+                        Region = "Tundra"
+                    end
+                else
+                 Region = "Central Rockfaces"
+                end
+            else
+             Region = "Mountains"
+            end
+        else
+         Region = "Desert"
+        end
+    else
+     Region = "Mesa"
+    end
+end
+   -- AUTO PLAY FUCTION
+ --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+ GUIFunc = coroutine.create(function()
+     
+     while wait(0.01) do
+ 
+         if not GUI then
+ 
+             GUIRunning = false
+ 
+             coroutine.yield()
+ 
+         end
+ 
+         GUIRunning = true
+ 
+         pcall(function()
+
+             if not game:GetService("Players").LocalPlayer.PlayerGui and tick() - (LastNotif or 0) > 1 then
+ 
+                 LastNotif = tick()
+ 
+             else
+
+                 local gui = Instance.new("ScreenGui")
+                 gui.Parent = game.Players.LocalPlayer.PlayerGui -- This places the GUI in the player's screen
+                 local NAMA = Instance.new("TextButton")
+                 NAMA.Parent = gui
+                 NAMA.Position = UDim2.new(0, 10, 0, 400)
+                 NAMA.Size = UDim2.new(0, 170, 0, 60)
+                 NAMA.TextSize = 80
+                 NAMA.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                 NAMA.BackgroundColor3 = Color3.fromRGB(250, 250, 250)
+                 NAMA.Font = Enum.Font.Oswald
+                 NAMA.Text = game:GetService("Players").LocalPlayer.PlayerGui.Data.Coins.Value
+
+                 local gui = Instance.new("ScreenGui")
+                 gui.Parent = game.Players.LocalPlayer.PlayerGui -- This places the GUI in the player's screen
+                 local NAMA1 = Instance.new("TextButton")
+                 NAMA1.Parent = gui
+                 NAMA1.Position = UDim2.new(0, 10, 0, 460)
+                 NAMA1.Size = UDim2.new(0, 170, 0, 60)
+                 NAMA1.TextSize = 40
+                 NAMA1.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                 NAMA1.BackgroundColor3 = Color3.fromRGB(250, 250, 250)
+                 NAMA1.Font = Enum.Font.Oswald
+                 NAMA1.Text = "RT:"..game:GetService("Players").LocalPlayer.PlayerGui.Data.Items.CreatureReviveToken.Value.." DG:"..game:GetService("Players").LocalPlayer.PlayerGui.Data.Items.DeathGachaToken.Value.." GT:"..game:GetService("Players").LocalPlayer.PlayerGui.Data.Items.FullGrowToken.Value
+                 wait(3)
+                 for _,Child in game:GetService("Players").LocalPlayer.PlayerGui:GetChildren("ScreenGui") do
+                     if Child.Name == "ScreenGui" then 
+                     Child:Destroy()
+                     end
+                 end
+
+             end   
+         end)           
+         end end)
+ 
+ 
+ --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+
+       -- AUTO PLAY FUCTION
+ --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+ RegionFunc = coroutine.create(function()
+     
+     while wait(0.01) do
+ 
+         if not GUI then
+ 
+             RegionRunning = false
+ 
+             coroutine.yield()
+ 
+         end
+ 
+         RegionRunning = true
+ 
+         pcall(function()
+
+             if not game:GetService("Players").LocalPlayer.PlayerGui and tick() - (LastNotif or 0) > 1 then
+ 
+                 LastNotif = tick()
+ 
+             else
+
+             RegionNow()
+
+             local args = {[1] = Region}                       
+             game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ChangeRegionRemote"):FireServer(unpack(args))  
+             print(workspace.Characters.Injisda:GetAttribute("Region")  )     
+         
+wait(1)
+             end   
+         end)           
+         end end)
+ 
+ 
+ --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+       -- AUTO PLAY FUCTION
+ --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+TradeFunc = coroutine.create(function()
+     
+    while wait(0.01) do
+
+        if not Trade then
+
+            TradeRunning = false
+
+            coroutine.yield()
+
+        end
+
+        TradeRunning = true
+
+        pcall(function()
+
+            if not game:GetService("Players").LocalPlayer.PlayerGui and tick() - (LastNotif or 0) > 1 then
+
+                LastNotif = tick()
+
+            else
+                local PlayMode = game:GetService("Players").LocalPlayer.PlayerGui.HUDGui.BottomFrame.Other.HotbarFrame:FindFirstChild("RadialMenu")
+                if PlayMode then 
+                    local VirtualInputManager = game:GetService("VirtualInputManager");
+                    VirtualInputManager:SendMouseButtonEvent(1030, 180, 0, true, game, 1)
+                    VirtualInputManager:SendMouseButtonEvent(1030, 180, 0, false, game, 1)   
+                    wait(2)
+                else
+                Creaturesnow = 0
+                for _, kontol in ipairs(game:GetService("Players").LocalPlayer.PlayerGui.Data.Unlocks:GetChildren()) do
+                    if kontol.Value > 0 then
+                        Creaturesnow =  Creaturesnow + 1 
+                    end 
+                end
+                if Creaturesnow < 10 then
+                    local args = {[1] = "Herbivores",[2] = 1}
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseItemRemote"):InvokeServer(unpack(args))
+                    wait(1)
+                    local args = {[1] = "Carnivores",[2] = 1}
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseItemRemote"):InvokeServer(unpack(args))
+                else
+                    children2323 = game.Players:GetChildren()
+                    count09 = #children2323
+        
+                        if count09 > 4  then
+                        local VirtualInputManager = game:GetService("VirtualInputManager");
+                        VirtualInputManager:SendMouseButtonEvent(430, 570, 0, true, game, 1)
+                        VirtualInputManager:SendMouseButtonEvent(430, 570, 0, false, game, 1)
+                        wait(1)
+                        else
+        
+                        end 
+        
+                end
+                end
+
+            end   
+        end)           
+        end end)
+
+
+--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+-- AUTO PLAY FUCTION
+ --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+ AutoOpenFunc = coroutine.create(function()
+     
+     while wait(0.01) do
+ 
+         if not AutoOpen then
+ 
+             AutoOpenRunning = false
+ 
+             coroutine.yield()
+ 
+         end
+ 
+         AutoOpenRunning = true
+ 
+         pcall(function()
+ 
+             if not game:GetService("Players").LocalPlayer.PlayerGui and tick() - (LastNotif or 0) > 1 then
+ 
+                 LastNotif = tick()
+ 
+             else
+
+             local PlayMode = game:GetService("Players").LocalPlayer.PlayerGui.HUDGui.BottomFrame.Other.HotbarFrame:FindFirstChild("RadialMenu")
+             if PlayMode then 
+
+                if workspace.Characters[game.Players.LocalPlayer.Name].Data:GetAttribute("sr") < 98 then
+                    workspace.Characters[game.Players.LocalPlayer.Name].Data:SetAttribute("sr", 999)
+                    workspace.Characters[game.Players.LocalPlayer.Name].Data:SetAttribute("Oxygen", 999)
+                    workspace.Characters[game.Players.LocalPlayer.Name].Data:SetAttribute("st", 999)
+                end
+
+                local children2323 = game.Players:GetChildren()
+                local count = #children2323
+
+                if count > 14 then
+                game:Shutdown()
+                end
+
+                 if game:GetService("Players").LocalPlayer.PlayerGui.DeathGui.ContainerFrame.Visible == true then
+                     local VirtualInputManager = game:GetService("VirtualInputManager")
+                     VirtualInputManager:SendMouseButtonEvent(500, 540, 0, true, game, 1)
+                     VirtualInputManager:SendMouseButtonEvent(500, 540, 0, false, game, 1) 
+                     wait(1)
+                 end
+       
+
+             else
+
+                 if game:GetService("Players").LocalPlayer.PlayerGui.DeathGui.ContainerFrame.Visible == true then
+                     local VirtualInputManager = game:GetService("VirtualInputManager")
+                     VirtualInputManager:SendMouseButtonEvent(500, 540, 0, true, game, 1)
+                     VirtualInputManager:SendMouseButtonEvent(500, 540, 0, false, game, 1) 
+                     wait(1)
+                 end
+
+
+                 local Pageslot = game:GetService("Players").LocalPlayer.PlayerGui.SaveSelectionGui.ContainerFrame.AllSlotsFrame.PagesFrame["1"].BackgroundColor3
+                 local RPageSlot = tostring(Pageslot)                    
+                 local PageSlot2 = string.match(RPageSlot, "%..")
+                 local PageSlot3 = string.match(PageSlot2, "%d+")                           
+                 if PageSlot3 == "8" then
+                         if game:GetService("Players").LocalPlayer.PlayerGui.SaveSelectionGui.ContainerFrame.AllSlotsFrame.SlotsFrame["1"].InnerFrame.EmptyFrame.Visible == true then
+                                     local args = {
+                                         [1] = "TrialCreatures",
+                                         [2] = "Aueko",
+                                         [3] = false
+                                     }                                     
+                                     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PurchaseCreatureRemote"):InvokeServer(unpack(args)) 
+                                     wait(3)
+                         elseif game:GetService("Players").LocalPlayer.PlayerGui.SaveSelectionGui.ContainerFrame.AllSlotsFrame.SlotsFrame["1"].InnerFrame.EmptyFrame.Visible == false then
+                                     if game:GetService("Players").LocalPlayer.PlayerGui.SaveSelectionGui.ContainerFrame.AllSlotsFrame.SlotsFrame["1"].InnerFrame.CreatureFrame.NameLabel.Text == "Aueko" then
+                                             if game:GetService("Players").LocalPlayer.PlayerGui.SaveSelectionGui.ContainerFrame.AllSlotsFrame.SlotsFrame["1"].InnerFrame.CreatureFrame.ButtonsFrame.RestartButton.Visible == true then
+                                                local VirtualInputManager = game:GetService("VirtualInputManager")
+                                                VirtualInputManager:SendMouseButtonEvent(720, 425, 0, true, game, 1)
+                                                VirtualInputManager:SendMouseButtonEvent(720, 425, 0, false, game, 1) 
+                                                wait(3)
+                                                local VirtualInputManager = game:GetService("VirtualInputManager")
+                                                VirtualInputManager:SendMouseButtonEvent(640, 355, 0, true, game, 1)
+                                                VirtualInputManager:SendMouseButtonEvent(640, 355, 0, false, game, 1) 
+                                             else
+                                                 local VirtualInputManager = game:GetService("VirtualInputManager")
+                                                 VirtualInputManager:SendMouseButtonEvent(570, 425, 0, true, game, 1)
+                                                 VirtualInputManager:SendMouseButtonEvent(570, 425, 0, false, game, 1) 
+                                                 wait(1)
+                                             end
+                                     else
+                                             local VirtualInputManager = game:GetService("VirtualInputManager")
+                                             VirtualInputManager:SendMouseButtonEvent(720, 425, 0, true, game, 1)
+                                             VirtualInputManager:SendMouseButtonEvent(720, 425, 0, false, game, 1) 
+                                             wait(3)
+                                             local VirtualInputManager = game:GetService("VirtualInputManager")
+                                             VirtualInputManager:SendMouseButtonEvent(580, 370, 0, true, game, 1)
+                                             VirtualInputManager:SendMouseButtonEvent(580, 370, 0, false, game, 1) 
+                                             wait(3)
+                                             local VirtualInputManager = game:GetService("VirtualInputManager")
+                                             VirtualInputManager:SendMouseButtonEvent(740, 70, 0, true, game, 1)
+                                             VirtualInputManager:SendMouseButtonEvent(740, 70, 0, false, game, 1) 
+                                     end
+                         end  
+                 else 
+                    local VirtualInputManager = game:GetService("VirtualInputManager")
+                    VirtualInputManager:SendMouseButtonEvent(350, 310, 0, true, game, 1)
+                    VirtualInputManager:SendMouseButtonEvent(350, 310, 0, false, game, 1) 
+                    wait(1)
+                    local VirtualInputManager = game:GetService("VirtualInputManager")
+                    VirtualInputManager:SendMouseButtonEvent(608, 470, 0, true, game, 1)
+                    VirtualInputManager:SendMouseButtonEvent(608, 470, 0, false, game, 1) 
+                    wait(1)
+                    local VirtualInputManager = game:GetService("VirtualInputManager")
+                    VirtualInputManager:SendMouseButtonEvent(500, 380, 0, true, game, 1)
+                    VirtualInputManager:SendMouseButtonEvent(500, 380, 0, false, game, 1) 
+                    wait(0.5)
+                    local VirtualInputManager = game:GetService("VirtualInputManager")
+                    VirtualInputManager:SendMouseButtonEvent(540, 550, 0, true, game, 1)
+                    VirtualInputManager:SendMouseButtonEvent(540, 550, 0, false, game, 1) 
+
+                 end
+             end
+                                             
+     end 
+         end)           
+         end end)
+ 
+ 
+ --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+
+
+    -- AUTO Farm FUCTION
+ --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+ AutoFarmFunc = coroutine.create(function()
+     
+     while wait(0.01) do
+ 
+         if not AutoFarm then
+ 
+             AutoFarmRunning = false
+ 
+             coroutine.yield()
+ 
+         end
+ 
+         AutoFarmRunning = true
+ 
+         pcall(function()
+ 
+             if not game.Players.LocalPlayer.Character.HumanoidRootPart and tick() - (LastNotif or 0) > 1 then
+ 
+                 LastNotif = tick()
+ 
+             else
+
+local Perent = workspace.Interactions.SpawnedTokens
+children45 = Perent:GetChildren() 
+Jumlah = #children45
+
+
+DeathPoints = game:GetService("Players").LocalPlayer.PlayerGui.Data.Slot1.DeathStats.MissionsCompleted.Value * 4    
+if DeathPoints > DeathPointTarget then
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("OxygenRemote"):FireServer() 
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -3096, -208, 873, 0, 0, -1, 0, 1, 0, 1, 0, 0)  
+    wait(1)
+
+else
+    if game:GetService("Players").LocalPlayer.Settings.Tutorial.Value == true then
+        local VirtualInputManager = game:GetService("VirtualInputManager")
+        VirtualInputManager:SendMouseButtonEvent(30, 380, 0, true, game, 1)
+        VirtualInputManager:SendMouseButtonEvent(30, 380, 0, false, game, 1) 
+        wait(1)
+        local VirtualInputManager = game:GetService("VirtualInputManager")
+        VirtualInputManager:SendMouseButtonEvent(280, 380, 0, true, game, 1)
+        VirtualInputManager:SendMouseButtonEvent(280, 380, 0, false, game, 1) 
+    else
+    if game:GetService("Players").LocalPlayer.PlayerGui.Data.Slot1.Dino.Value == "Sochuri" and game:GetService("Players").LocalPlayer.PlayerGui.Data.Coins.Value > 100 then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -3096, -208, 873, 0, 0, -1, 0, 1, 0, 1, 0, 0)  
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("OxygenRemote"):FireServer() 
+        wait(0.7)
+    else
+
+    if Jumlah > 0 then  
+        for _,Child in workspace.Interactions.SpawnedTokens:GetChildren() do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Child.CFrame
+        wait(0.1)
+        keypress(0x45)
+        keyrelease(0x45)
+        local VirtualInputManager = game:GetService("VirtualInputManager")
+        VirtualInputManager:SendMouseButtonEvent(520, 430, 0, true, game, 1)
+        VirtualInputManager:SendMouseButtonEvent(520, 430, 0, false, game, 1) 
+        wait()
+        local VirtualInputManager = game:GetService("VirtualInputManager")
+        VirtualInputManager:SendMouseButtonEvent(470, 390, 0, true, game, 1)
+        VirtualInputManager:SendMouseButtonEvent(470, 390, 0, false, game, 1) 
+        wait()
+        local VirtualInputManager = game:GetService("VirtualInputManager")
+        VirtualInputManager:SendMouseButtonEvent(720, 190, 0, true, game, 1)
+        VirtualInputManager:SendMouseButtonEvent(720, 190, 0, false, game, 1) 
+        end
+
+    else 
+        if game:GetService("Players").LocalPlayer.PlayerGui.HUDGui.BottomFrame.Other.AilmentsFrame:FindFirstChild("AshyLungs")
+        or game:GetService("Players").LocalPlayer.PlayerGui.HUDGui.SideFrame.Mobile.MinimapFrame.Weather.Text == "ACID RAIN" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -2652, 330, -246, 0, 0, -1, 0, 1, 0, 1, 0, 0)  
+        else
+            local Darah6 = game:GetService("Players").LocalPlayer.PlayerGui.HUDGui.BottomFrame.Other.Health.HoverLabel.Text
+            local Darah3 = string.match(Darah6, "%(...")
+            local Darah4 = string.match(Darah3, "%d+")
+            local Darah5 = tonumber(Darah4)
+            if Darah5 < 25 then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new( -1666, 380, 1611, 0, 0, -1, 0, 1, 0, 1, 0, 0) 
+                        wait(0.5)
+            else
+                keypress(0x4F)
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions[Region].ConcealScent.Value == true then
+                        if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions[Region].EatFoodDrinkWater.Value == true then
+                            if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions[Region].DistanceTravelled.Value == true then
+                                if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions[Region].AttackOrHealCreature.Value == true then
+                                    if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions[Region].TimePlayed.Value == true then  
+                                        if game:GetService("Players").LocalPlayer.PlayerGui.Data.Missions.RegionMissions[Region].Sniff.Value == true then
+                                        else
+                                            Sniff()
+                                        end                            
+                                    else
+                                        NeedWait()
+                                    end
+                                else                   
+                                Hitself()
+                                local args = {[1] = {[1] = workspace:WaitForChild("Characters"):WaitForChild(Musuh)}}
+                                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CharactersDamageRemote"):FireServer(unpack(args)) 
+                                wait(1)
+                                end
+                            else
+                            Pergi()
+                            end
+                        else
+                        MakanMinum()
+                        end
+                    else           
+                    Mud()
+                end
+            end
+            end
+         end
+    end
+end  
+end
+end                                         
+         end)           
+         end end)
+ 
+ 
+ --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+
+ --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--  
+ 
+
+ local Player = game.Players.LocalPlayer
+ local lib = loadstring(game:GetObjects("rbxassetid://7657867786")[1].Source)()
+ local subs = lib.subs 
+ local libclose = subs.Wait
+ 
+ local window = lib:CreateWindow({
+     Name = "Vino",
+     Themeable = {
+         Background = {Asset = 5972988999, Visible = 0, Transparency = 0.5}},
+         Transparency = 0.5
+ })
+ 
+ local main1 = window:CreateTab({
+     Name = "Main"
+ })
+
+ local Section1 = main1:CreateSection({
+     Name = "NORMAL"
+ })
+ 
+ Section1:AddToggle({
+     Name = "Auto Farm",
+     Value = true,
+     Flag = "SPIN20",
+     Callback = function(state20)
+         SPIN20 = state20 
+         task.spawn(function()  
+                 AutoFarm = state20
+ 
+                 if state20 and not AutoFarmRunning then
+     
+                     coroutine.resume(AutoFarmFunc)
+                 end
+                 end)
+            task.wait()
+     end 
+ })
+
+ Section1:AddToggle({
+     Name = "Auto PLAY",
+     Value = true,
+     Flag = "SPIN21",
+     Callback = function(state21)
+         SPIN21 = state21 
+         task.spawn(function()  
+                 AutoOpen = state21
+ 
+                 if state21 and not AutoOpenRunning then
+     
+                     coroutine.resume(AutoOpenFunc)
+                 end
+                 end)
+            task.wait()
+     end 
+ })
+
+ Section1:AddToggle({
+     Name = "GUI",
+     Value = true,
+     Flag = "SPIN22",
+     Callback = function(state22)
+         SPIN22 = state22
+         task.spawn(function()  
+             GUI = state22
+ 
+                 if state22 and not GUIRunning then
+     
+                     coroutine.resume(GUIFunc)
+                 end
+                 end)
+            task.wait()
+     end 
+ })
+
+ local Section2 = main1:CreateSection({
+    Name = "Trade"
+})
+
+ Section2:AddToggle({
+     Name = "Buying all",
+     Value = false,
+     Flag = "SPIN22",
+     Callback = function(state2005)
+         SPIN2005 = state2005
+         task.spawn(function()  
+            Trade = state2005
+ 
+                 if state2005 and not TradeRunning then
+     
+                     coroutine.resume(TradeFunc)
+                 end
+                 end)
+            task.wait()
+     end 
+ })
+
+     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/lime"))()
+     
+     local w = Library:Window("")
+     
+     w:Button("RIGHT SHIFT", function()
+     game:GetService("VirtualInputManager"):SendKeyEvent(true, 303, false, game)
+     game:GetService("VirtualInputManager"):SendKeyEvent(false, 303, false, game)
+     end)
+
+     Section1:AddToggle({
+         Name = "Region",
+         Value = true,
+         Flag = "SPIN255",
+         Callback = function(state255)
+             SPIN225 = state255
+             task.spawn(function()  
+                 GUI = state255
+     
+                     if state255 and not RegionRunning then
+         
+                         coroutine.resume(RegionFunc)
+                     end
+                     end)
+                task.wait()
+         end 
+     })
+     
+         local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/lime"))()
+         
+         local w = Library:Window("")
+         
+         w:Button("RIGHT SHIFT", function()
+         game:GetService("VirtualInputManager"):SendKeyEvent(true, 303, false, game)
+         game:GetService("VirtualInputManager"):SendKeyEvent(false, 303, false, game)
+         end)
+ 
+        else 
+            function PlayerCheck()
+                for _,Child5 in game:GetService("Players"):GetChildren() do
+                    if Child5.Name == NamaPengumpul then
+                        NamaPengumpulCheck = true
+                        return
+                    else 
+                        NamaPengumpulCheck = false
+                    end
+                end
+                end
+                                         --START of FUNCTION--
+                                          Receiver2Func = coroutine.create(function() 
+                                            while wait(0.01) do
+                        
+                                                if not Receiver2 then
+                        
+                                                    Receiver2Running = false
+                        
+                                                    coroutine.yield()
+                        
+                                                end
+                        
+                                                Receiver2Running = true
+                        
+                                                pcall(function()
+                        
+                                                    if not game.Players.LocalPlayer.Character.HumanoidRootPart and tick() - (LastNotif or 0) > 1 then
+                        
+                                                        LastNotif = tick()
+                        
+                                                    else
+                                                            if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Theirs.OffersFrame.AcceptedLabel.Visible == true then
+                                                                wait(1)  
+                                                                local VirtualInputManager = game:GetService("VirtualInputManager");
+                                                                VirtualInputManager:SendMouseButtonEvent(750, 420, 0, true, game, 1)
+                                                                VirtualInputManager:SendMouseButtonEvent(750, 420, 0, false, game, 1)
+                                                                wait(1)
+                                                                end
+                                                            else      
+                                                                local VirtualInputManager = game:GetService("VirtualInputManager");
+                                                                VirtualInputManager:SendMouseButtonEvent(930, 505, 0, true, game, 1)
+                                                                VirtualInputManager:SendMouseButtonEvent(930, 505, 0, false, game, 1)
+                                                                wait(1)
+                                                            end   
+                        
+                                                    end                                           
+                                                end)           
+                                                end end)
+                                        --START of FUNCTION--
+                                        ReceiverFunc = coroutine.create(function() 
+                                            while wait(0.01) do
+                        
+                                                if not Receiver then
+                        
+                                                    ReceiverRunning = false
+                        
+                                                    coroutine.yield()
+                        
+                                                end
+                        
+                                                ReceiverRunning = true
+                        
+                                                pcall(function()
+                        
+                                                    if not game.Players.LocalPlayer.Character.HumanoidRootPart and tick() - (LastNotif or 0) > 1 then
+                        
+                                                        LastNotif = tick()
+                        
+                                                    else
+                                                
+                                                        if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                            wait(2)
+                                                            if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                wait(2)
+                                                                if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                    wait(2)
+                                                                    if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                        wait(2)
+                                                                        if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                            wait(2)
+                                                                            if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                wait(2)
+                                                                                if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                    wait(2)
+                                                                                    if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                        wait(2)
+                                                                                        if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                            wait(2)
+                                                                                            if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                wait(2)
+                                                                                                if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                    wait(2)
+                                                                                                    if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                        wait(2)
+                                                                                                        if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                            wait(2)
+                                                                                                            if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                                wait(2)
+                                                                                                                if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                                    wait(2)
+                                                                                                                    if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                                        wait(2)
+                                                                                                                        if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                                            wait(2)
+                                                                                                                            if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                                                wait(2)
+                                                                                                                                if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                                                    wait(2)
+                                                                                                                if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == true then
+                                                                                                                    local VirtualInputManager = game:GetService("VirtualInputManager");
+                                                                                                                    VirtualInputManager:SendMouseButtonEvent(650, 420, 0, true, game, 1)
+                                                                                                                    VirtualInputManager:SendMouseButtonEvent(650, 420, 0, false, game, 1)
+                                                                    
+                                                                                                                end    
+                                                                                                                                else
+                                                                                                                                    return
+                                                                                                                                end
+                                                                                                                            else
+                                                                                                                                return
+                                                                                                                            end
+                                                                                                                        else
+                                                                                                                            return
+                                                                                                                        end
+                                                                                                                    else
+                                                                                                                        return
+                                                                                                                    end
+                                                                                                                else
+                                                                                                                    return
+                                                                                                                end
+                                                                                                            else
+                                                                                                                return
+                                                                                                            end
+                                                                                                        else
+                                                                                                            return
+                                                                                                        end
+                                                                                                    else
+                                                                                                        return
+                                                                                                    end
+                                                                                                else
+                                                                                                    return
+                                                                                                end
+                                                                                            else
+                                                                                                return
+                                                                                            end
+                                                                                        else
+                                                                                            return
+                                                                                        end
+                                                                                    else
+                                                                                        return
+                                                                                    end
+                                                                                else
+                                                                                    return
+                                                                                end
+                                                                            else
+                                                                                return
+                                                                            end    
+                                                                        else
+                                                                            return
+                                                                        end
+                                                                    else
+                                                                        return
+                                                                    end
+                                                                else
+                                                                    return
+                                                                end
+                                                            else
+                                                                return
+                                                            end
+                                                        else
+                                                            return
+                                                        end
+                                        end                                           
+                                                end)           
+                                                end end)
+                                        --END of FUNCTION--
+                        
+                                        --START of FUNCTION--
+                                        GiverFunc = coroutine.create(function() 
+                                            while wait(0.01) do
+                        
+                                                if not Giver then
+                        
+                                                    GiverRunning = false
+                        
+                                                    coroutine.yield()
+                        
+                                                end
+                        
+                                                GiverRunning = true
+                        
+                                                pcall(function()
+                        
+                                                    if not game.Players.LocalPlayer.Character.HumanoidRootPart and tick() - (LastNotif or 0) > 1 then
+                        
+                                                        LastNotif = tick()
+                        
+                                                    else
+                                                        
+                                                Mushvalue = game:GetService("Players").LocalPlayer.Data.Coins.Value
+                                                if Mushvalue > 1 then
+                                                        
+                                        PlayerCheck()
+                                            if NamaPengumpul ~= nil and NamaPengumpulCheck == true then
+                                                    if game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Visible == false then
+                                                        for _, tycoon in pairs(game:GetService("Players").LocalPlayer.PlayerGui.PlayersGui.ContainerFrame.PlayersFrame:GetChildren()) do --DESTROY ALL EXCEPT RECEIVER NAME
+                                                            
+                                                            if tycoon.Name == NamaPengumpul or tycoon.Name == "UIListLayout" or tycoon.Name == "Default" or tycoon.Name == NamaPengumpul2 then
+                                                            else
+                                                                tycoon:Destroy() 
+                                                            end
+                                                        end
+                                                            if game:GetService("Players").LocalPlayer.PlayerGui.PlayersGui.ContainerFrame.Visible == false then --CLICK THE TRADE LIST
+                                                                local VirtualInputManager = game:GetService("VirtualInputManager");
+                                                                VirtualInputManager:SendMouseButtonEvent(480, 510, 0, true, game, 1)
+                                                                VirtualInputManager:SendMouseButtonEvent(480, 510, 0, false, game, 1)
+                                                                else --CLICK THE TRADE
+                                                                wait(0.5)
+                                                                    local VirtualInputManager = game:GetService("VirtualInputManager");
+                                                                    VirtualInputManager:SendMouseButtonEvent(660, 190, 0, true, game, 1)
+                                                                    VirtualInputManager:SendMouseButtonEvent(660, 190, 0, false, game, 1)
+                                                            end
+                                                        else --DO THE TRADE
+                                                        Whotrade = game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Theirs.DisplayNameLabel.UserNameLabel.Text
+                                                        Whotrade1 = string.gsub(Whotrade, "@", "")
+                                                        User = game:GetService("Players").LocalPlayer.Name
+                                                        TradeTrack = User.."-"..Whotrade1.."TradeRemote"
+                                                        print(TradeTrack)
+                                                    end
+                                            Revive = game:GetService("Players").LocalPlayer.Data.Items.CreatureReviveToken
+                                            Fullgrow = game:GetService("Players").LocalPlayer.Data.Items.FullGrowToken
+                                            Partial = game:GetService("Players").LocalPlayer.Data.Items.PartialGrowToken
+                                            Creaturecolor = game:GetService("Players").LocalPlayer.Data.Items.ChangeCreatureColorsToken
+                                            Trial = game:GetService("Players").LocalPlayer.Data.Items.RandomStoredCreatureToken
+                                            Freespin = game:GetService("Players").LocalPlayer.Data.Items.FreeSpinToken
+                                            Deathgacha = game:GetService("Players").LocalPlayer.Data.Items.DeathGachaToken
+                                            Monster = game:GetService("Players").LocalPlayer.Data.Items.MonsterExplorerGachaToken
+                                            Sweet = game:GetService("Players").LocalPlayer.Data.Items.SweetExplorerGachaToken
+                                            Mutate = game:GetService("Players").LocalPlayer.Data.Items.MutateExplorerGachaToken
+                                            Galaxy = game:GetService("Players").LocalPlayer.Data.Items.GalaxyExplorerGachaToken
+                                            Explorer = game:GetService("Players").LocalPlayer.Data.Items.ExplorerGachaToken
+                                            Heart = game:GetService("Players").LocalPlayer.Data.Plushies.Heart
+                                            Rosevine = game:GetService("Players").LocalPlayer.Data.Plushies.Rosevine
+                                            Heartsnake = game:GetService("Players").LocalPlayer.Data.Plushies.Heartsnake
+                                            Swan = game:GetService("Players").LocalPlayer.Data.Plushies.Swan
+                                            Mushvalue = game:GetService("Players").LocalPlayer.Data.Coins.Value
+                                            TradeCheck = game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Yours.OffersFrame.ScrollingFrame["8"]
+                                            FullCheck = game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Yours.OffersFrame.ScrollingFrame.AddButton.Visible
+                                                    if Whotrade1 == NamaPengumpul or Whotrade1 == NamaPengumpul2 then
+                                                        if Mushvalue < 36000 and Mushvalue > 0 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Currency",["Name"] = "Shooms",["Amount"] = Mushvalue}}
+                                                            game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                            wait(1)
+                                                        elseif Mushvalue > 35999 then
+                                                        local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Currency",["Name"] = "Shooms",["Amount"] = 36000}}
+                                                        game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Revive.Value < 26 and Revive.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Revive.Name,
+                                                            ["Amount"] = Revive.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Revive.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Revive.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Fullgrow.Value < 26 and Fullgrow.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Fullgrow.Name,
+                                                            ["Amount"] = Fullgrow.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Fullgrow.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Fullgrow.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Partial.Value < 26 and Partial.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Partial.Name,
+                                                            ["Amount"] = Partial.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Partial.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Partial.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Creaturecolor.Value < 26 and Creaturecolor.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Creaturecolor.Name,
+                                                            ["Amount"] = Creaturecolor.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Creaturecolor.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Creaturecolor.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Trial.Value < 26 and Trial.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Trial.Name,
+                                                            ["Amount"] = Trial.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Trial.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Trial.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Freespin.Value < 26 and Freespin.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Freespin.Name,
+                                                            ["Amount"] = Freespin.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Freespin.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Freespin.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Deathgacha.Value < 26 and Deathgacha.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Deathgacha.Name,
+                                                            ["Amount"] = Deathgacha.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Deathgacha.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Deathgacha.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Heart.Value < 26 and Heart.Value > 0 then 
+                                                        local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                        ["Name"] = Heart.Name,
+                                                        ["Amount"] = Heart.Value}}              
+                                                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                        elseif Heart.Value > 25 then
+                                                        local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                        ["Name"] = Heart.Name,
+                                                        ["Amount"] = 25}}              
+                                                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Heartsnake.Value < 26 and Heartsnake.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                            ["Name"] = Heartsnake.Name,
+                                                            ["Amount"] = Heartsnake.Value}}              
+                                                            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                        elseif Heartsnake.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                            ["Name"] = Heartsnake.Name,
+                                                            ["Amount"] = 25}}              
+                                                            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                    if Rosevine.Value < 26 and Rosevine.Value > 0 then 
+                                                    local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                    ["Name"] = Rosevine.Name,
+                                                    ["Amount"] = Rosevine.Value}}              
+                                                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                    elseif Rosevine.Value > 25 then
+                                                    local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                    ["Name"] = Rosevine.Name,
+                                                    ["Amount"] = 25}}              
+                                                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                    end
+                                                    wait(1)
+                        
+                                                    if Swan.Value < 26 and Swan.Value > 0 then 
+                                                    local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                    ["Name"] = Swan.Name,
+                                                    ["Amount"] = Swan.Value}}              
+                                                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                    elseif Swan.Value > 25 then
+                                                    local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                    ["Name"] = Swan.Name,
+                                                    ["Amount"] = 25}}              
+                                                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                    end
+                                                    wait(1)
+                        
+                                                        if Sweet.Value < 26 and Sweet.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Sweet.Name,
+                                                            ["Amount"] = Sweet.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Sweet.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Sweet.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Monster.Value < 26 and Monster.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Monster.Name,
+                                                            ["Amount"] = Monster.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Monster.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Monster.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                        
+                                                        if Mutate.Value < 26 and Mutate.Value > 0 and FullCheck == true then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Mutate.Name,
+                                                            ["Amount"] = Mutate.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Mutate.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Mutate.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                                                        if Explorer.Value < 26 and Explorer.Value > 0 and FullCheck == true then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Explorer.Name,
+                                                            ["Amount"] = Explorer.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Explorer.Value > 25 and FullCheck == true then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Explorer.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1)
+                                                        if Galaxy.Value < 26 and Galaxy.Value > 0 and FullCheck == true then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Galaxy.Name,
+                                                            ["Amount"] = Galaxy.Value
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        elseif Galaxy.Value > 25 and FullCheck == true then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                            ["Name"] = Galaxy.Name,
+                                                            ["Amount"] = 25
+                                                        }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                        end
+                                                    wait(1) 
+                                                    local args = {[1] = "AcceptTrade"}
+                                                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes")[TradeTrack]:InvokeServer(unpack(args))       
+                                                else
+                                                    local args = {[1] = "DeclineTrade"}             
+                                                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes")[TradeTrack]:InvokeServer(unpack(args))
+                                                end
+                                            else
+                                                local gui = Instance.new("ScreenGui")
+                                                gui.Parent = game.Players.LocalPlayer.PlayerGui -- This places the GUI in the player's screen           
+                                                local Notice = Instance.new("TextButton")
+                                                Notice.Parent = gui
+                                                Notice.Position = UDim2.new(0, 20, 0, 480)
+                                                Notice.Size = UDim2.new(0, 200, 0, 40)
+                                                Notice.TextSize = 16
+                                                Notice.Text = "User Not Found"
+                                                Notice.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+                                                wait(1)
+                                                for _,Child in game:GetService("Players").LocalPlayer.PlayerGui:GetChildren("ScreenGui") do
+                                                    if Child.Name == "ScreenGui" then 
+                                                    Child:Destroy()
+                                                    end
+                                                end
+                                            end 
+                                        else
+                                            local gui = Instance.new("ScreenGui")
+                                            gui.Parent = game.Players.LocalPlayer.PlayerGui -- This places the GUI in the player's screen           
+                                            local Notice = Instance.new("TextButton")
+                                            Notice.Parent = gui
+                                            Notice.Position = UDim2.new(0, 450, 0, 15)
+                                            Notice.Size = UDim2.new(0, 260, 0, 40)
+                                            Notice.TextSize = 12
+                                            Notice.Text = 'No Mush "Click this to Shutdown"'
+                                            Notice.BackgroundColor3 = Color3.fromRGB(250, 0, 0)
+                                            Notice.MouseButton1Click:Connect(function()
+                                                game:Shutdown()
+                                            end)
+                                            wait(2)
+                                            for _,Child in game:GetService("Players").LocalPlayer.PlayerGui:GetChildren("ScreenGui") do
+                                                if Child.Name == "ScreenGui" then 
+                                                Child:Destroy()
+                                                end
+                                            end
+                                      end   
+                                    end
+                                        end)           
+                                        end end)
+                                        --END of FUNCTION--
+                                        local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/turtle"))()                     
+                                        local OwO = library:Window("TradeGui")
+                                        OwO:Label("Set Giver", Color3.fromRGB(200, 200, 200))
+                                        OwO:Box("Receiver Name", function(text, focuslost)
+                                            NamaPengumpul = text
+                                        end)
+                
+                                        OwO:Toggle("Set true if Giver", false, function(state258)
+                                        task.spawn(function() 
+                                            Giver = state258
+                        
+                                                if state258 and not GiverRunning then
+                        
+                                                    coroutine.resume(GiverFunc)
+                                                end
+                                                end)
+                                            task.wait()
+                                                end)
+                                        OwO:Label("Set Receiver", Color3.fromRGB(200, 200, 200))
+                    
+                                                OwO:Toggle("Set true if Receiver", false, function(state255)
+                                                    task.spawn(function()  
+                                                        Receiver = state255
+                                            
+                                                            if state255 and not ReceiverRunning then
+                                                
+                                                                coroutine.resume(ReceiverFunc)
+                                                            end
+                                                            end)
+                                                    task.spawn(function()  
+                                                            Receiver2 = state255
+                                        
+                                                        if state255 and not Receiver2Running then
+                                            
+                                                            coroutine.resume(Receiver2Func)
+                                                        end
+                                                        end)
+                                                    task.wait()
+                                                    end)
+                                               
+                               
+                                        OwO:Button("Manual Trading", function()
+                                            pcall(function()
+                
+                                                if not game:GetService("Players").LocalPlayer and tick() - (LastNotif or 0) > 1 then
+                                            
+                                                    LastNotif = tick()
+                                            
+                                                else
+                                                    
+                                                    Whotrade = game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Theirs.DisplayNameLabel.UserNameLabel.Text
+                                                    Whotrade1 = string.gsub(Whotrade, "@", "")
+                                                    User = game:GetService("Players").LocalPlayer.Name
+                                                    TradeTrack = Whotrade1.."-"..User.."TradeRemote"
+                                                   
+                                                    Revive = game:GetService("Players").LocalPlayer.Data.Items.CreatureReviveToken
+                                                   
+                                                    Fullgrow = game:GetService("Players").LocalPlayer.Data.Items.FullGrowToken
+                                                   
+                                                    Partial = game:GetService("Players").LocalPlayer.Data.Items.PartialGrowToken
+                                                   
+                                                    Creaturecolor = game:GetService("Players").LocalPlayer.Data.Items.ChangeCreatureColorsToken
+                                                   
+                                                    Trial = game:GetService("Players").LocalPlayer.Data.Items.RandomStoredCreatureToken
+                                                   
+                                                    Freespin = game:GetService("Players").LocalPlayer.Data.Items.FreeSpinToken
+                                                   
+                                                    Deathgacha = game:GetService("Players").LocalPlayer.Data.Items.DeathGachaToken
+                                                   
+                                                    Monster = game:GetService("Players").LocalPlayer.Data.Items.MonsterExplorerGachaToken
+                                                   
+                                                    Sweet = game:GetService("Players").LocalPlayer.Data.Items.SweetExplorerGachaToken
+                                                   
+                                                    Mutate = game:GetService("Players").LocalPlayer.Data.Items.MutateExplorerGachaToken
+                                                   
+                                                    Galaxy = game:GetService("Players").LocalPlayer.Data.Items.GalaxyExplorerGachaToken
+                                                   
+                                                    Explorer = game:GetService("Players").LocalPlayer.Data.Items.ExplorerGachaToken
+                                                   
+                                                    Heart = game:GetService("Players").LocalPlayer.Data.Plushies.Heart
+                                        
+                                                    Rosevine = game:GetService("Players").LocalPlayer.Data.Plushies.Rosevine
+                                        
+                                                    Heartsnake = game:GetService("Players").LocalPlayer.Data.Plushies.Heartsnake
+                                           
+                                                    Swan = game:GetService("Players").LocalPlayer.Data.Plushies.Swan
+                                        
+                                                    Mushvalue = game:GetService("Players").LocalPlayer.Data.Coins.Value
+                                                   
+                                                    TradeCheck = game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Yours.OffersFrame.ScrollingFrame["8"]
+                                                   
+                                                    FullCheck = game:GetService("Players").LocalPlayer.PlayerGui.TradeGui.ContainerFrame.Yours.OffersFrame.ScrollingFrame.AddButton.Visible
+                                                            
+                                                   
+                                                           if Mushvalue < 36000 and Mushvalue > 0 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Currency",["Name"] = "Shooms",["Amount"] = Mushvalue}}
+                                                               game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                               wait(1)
+                                                           elseif Mushvalue > 35999 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Currency",["Name"] = "Shooms",["Amount"] = 36000}}
+                                                            game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Revive.Value < 26 and Revive.Value > 0 then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Revive.Name,
+                                                               ["Amount"] = Revive.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Revive.Value > 25 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Revive.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Fullgrow.Value < 26 and Fullgrow.Value > 0 then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Fullgrow.Name,
+                                                               ["Amount"] = Fullgrow.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Fullgrow.Value > 25 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Fullgrow.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Partial.Value < 26 and Partial.Value > 0 then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Partial.Name,
+                                                               ["Amount"] = Partial.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Partial.Value > 25 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Partial.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Creaturecolor.Value < 26 and Creaturecolor.Value > 0 then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Creaturecolor.Name,
+                                                               ["Amount"] = Creaturecolor.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Creaturecolor.Value > 25 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Creaturecolor.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Trial.Value < 26 and Trial.Value > 0 then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Trial.Name,
+                                                               ["Amount"] = Trial.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Trial.Value > 25 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Trial.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Freespin.Value < 26 and Freespin.Value > 0 then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Freespin.Name,
+                                                               ["Amount"] = Freespin.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Freespin.Value > 25 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Freespin.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Deathgacha.Value < 26 and Deathgacha.Value > 0 then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Deathgacha.Name,
+                                                               ["Amount"] = Deathgacha.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Deathgacha.Value > 25 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Deathgacha.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Heart.Value < 26 and Heart.Value > 0 then 
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                            ["Name"] = Heart.Name,
+                                                            ["Amount"] = Heart.Value}}              
+                                                            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                           elseif Heart.Value > 25 then
+                                                            local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                            ["Name"] = Heart.Name,
+                                                            ["Amount"] = 25}}              
+                                                            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                            if Heartsnake.Value < 26 and Heartsnake.Value > 0 then 
+                                                                local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                                ["Name"] = Heartsnake.Name,
+                                                                ["Amount"] = Heartsnake.Value}}              
+                                                                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                            elseif Heartsnake.Value > 25 then
+                                                                local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                                ["Name"] = Heartsnake.Name,
+                                                                ["Amount"] = 25}}              
+                                                                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                            end
+                                                    wait(1)
+                                        
+                                                    if Rosevine.Value < 26 and Rosevine.Value > 0 then 
+                                                        local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                        ["Name"] = Rosevine.Name,
+                                                        ["Amount"] = Rosevine.Value}}              
+                                                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                    elseif Rosevine.Value > 25 then
+                                                        local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                        ["Name"] = Rosevine.Name,
+                                                        ["Amount"] = 25}}              
+                                                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                    end
+                                                    wait(1)
+                                        
+                                                    if Swan.Value < 26 and Swan.Value > 0 then 
+                                                        local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                        ["Name"] = Swan.Name,
+                                                        ["Amount"] = Swan.Value}}              
+                                                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                    elseif Swan.Value > 25 then
+                                                        local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Plushies",
+                                                        ["Name"] = Swan.Name,
+                                                        ["Amount"] = 25}}              
+                                                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild(TradeTrack):InvokeServer(unpack(args))
+                                                    end
+                                                    wait(1)
+                                        
+                                                           if Sweet.Value < 26 and Sweet.Value > 0 then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Sweet.Name,
+                                                               ["Amount"] = Sweet.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Sweet.Value > 25 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Sweet.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Monster.Value < 26 and Monster.Value > 0 then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Monster.Name,
+                                                               ["Amount"] = Monster.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Monster.Value > 25 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Monster.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Mutate.Value < 26 and Mutate.Value > 0 and FullCheck == true then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Mutate.Name,
+                                                               ["Amount"] = Mutate.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Mutate.Value > 25 then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Mutate.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                           if Explorer.Value < 26 and Explorer.Value > 0 and FullCheck == true then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Explorer.Name,
+                                                               ["Amount"] = Explorer.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Explorer.Value > 25 and FullCheck == true then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Explorer.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1)
+                                                   
+                                                   
+                                                           if Galaxy.Value < 26 and Galaxy.Value > 0 and FullCheck == true then 
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Galaxy.Name,
+                                                               ["Amount"] = Galaxy.Value
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           elseif Galaxy.Value > 25 and FullCheck == true then
+                                                               local args = {[1] = "AddTradeItem",[2] = {["Overwrite"] = true,["ItemType"] = "Tokens",
+                                                               ["Name"] = Galaxy.Name,
+                                                               ["Amount"] = 25
+                                                           }}game:GetService("ReplicatedStorage").Remotes[TradeTrack]:InvokeServer(unpack(args))
+                                                           end
+                                                   wait(1) 
+                                                   local args = {
+                                                    [1] = "AcceptTrade"
+                                                }
+                                                
+                                                game:GetService("ReplicatedStorage"):WaitForChild("Remotes")[TradeTrack]:InvokeServer(unpack(args))
+                                                
+                                            
+                                                end
+                                            end)
+                                            end)
+                
+                                            
+                
+        end
+
+
+
+
+
