@@ -1,7 +1,7 @@
 NamaPengumpul = {"JacobPlaysfarm4", "jsis8siwj9", "Fourball4", "Dddcxdx2"}
 
 TargetShroom = 7000
-LimitTrade = 850000 
+LimitTrade = 900000 
 
 HargaStallRev = 750
 HargaStallMax = 450
