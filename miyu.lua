@@ -1,0 +1,14 @@
+NamaPengumpul = {"JacobPlaysfarm4", "jsis8siwj9", "Fourball4", "Dddcxdx2"}
+
+TargetShroom = 7000
+LimitTrade = 850000 
+
+HargaStallRev = 750
+HargaStallMax = 450
+
+AttackOrder5 = {1200, 1200, 1200, 1200} 
+random5 = AttackOrder5[math.random(1,#AttackOrder5)]
+
+DeathPointTarget = random5
+
+MaxPlayerCount = 35
