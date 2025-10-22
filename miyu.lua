@@ -1,4 +1,4 @@
-NamaPengumpul = {"foomsmile", "SEBITASwasa0", "Fourball4", "braleigh_claire09"}
+NamaPengumpul = {"foomsmile", "Monk_Phantom120", "Fourball4", "braleigh_claire09"}
 
 TargetShroom = 7000
 LimitTrade = 2500000 
