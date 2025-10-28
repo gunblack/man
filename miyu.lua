@@ -12,4 +12,4 @@ random5 = AttackOrder5[math.random(1,#AttackOrder5)]
 
 DeathPointTarget = random5
 
-MaxPlayerCount = 55
+MaxPlayerCount = 48
