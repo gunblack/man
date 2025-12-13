@@ -1,7 +1,7 @@
 NamaPengumpul = {"foomsmile", "Mermaidsmist", "Fourball4", "braleigh_claire09", "Jbmc1172", "cool12jwI"}
 
 TargetShroom = 7000
-LimitTrade = 3500000 
+LimitTrade = 4500000 
 
 HargaStallRev = 750
 HargaStallMax = 450
