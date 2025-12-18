@@ -3,8 +3,8 @@ NamaPengumpul = {"foomsmile", "Mermaidsmist", "Fourball4", "braleigh_claire09", 
 TargetShroom = 7000
 LimitTrade = 5500000 
 
-HargaStallRev = 750
-HargaStallMax = 450
+HargaStallRev = 950
+HargaStallMax = 650
 HargaDeathToken = 3200
 
 AttackOrder5 = {1200, 1200, 1200, 1200} 
