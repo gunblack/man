@@ -5,7 +5,7 @@ LimitTrade = 5500000
 
 HargaStallRev = 950
 HargaStallMax = 650
-HargaDeathToken = 3200
+HargaDeathToken = 3500
 
 AttackOrder5 = {1200, 1200, 1200, 1200} 
 random5 = AttackOrder5[math.random(1,#AttackOrder5)]
